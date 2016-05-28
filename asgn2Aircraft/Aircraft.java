@@ -32,7 +32,7 @@ import asgn2Simulators.Log;
  * also provided for logging and graphical display. 
  * 
  * @author hogan
- *
+ * @author Conrad Bell
  */
 public abstract class Aircraft {
 
@@ -65,7 +65,29 @@ public abstract class Aircraft {
 	 * @throws AircraftException if isNull(flightCode) OR (departureTime <=0) OR ({first,business,premium,economy} <0)
 	 */
 	public Aircraft(String flightCode,int departureTime, int first, int business, int premium, int economy) throws AircraftException {
-		//Lots here 
+		if(flightCode == null){
+		throw new AircraftException("Flight code is missing.");
+		}
+		if(departureTime <= 0){
+			throw new AircraftException("Aircraft has already departed.");
+		}
+		if(first < 0){
+			throw new AircraftException("First class is not entered.");
+		}
+		if(business < 0){
+			throw new AircraftException("Business class is not entered.");			
+		}
+		if(premium < 0){
+			throw new AircraftException("Premium Economy class is not entered.");
+		}
+		if(economy < 0){
+			throw new AircraftException("Economy class is not entered.");
+		}
+		firstCapacity = first;
+		businessCapacity = business;
+		premiumCapacity = premium;
+		economyCapacity = economy;
+		
 		this.status = "";
 	}
 	
@@ -120,7 +142,12 @@ public abstract class Aircraft {
 	 * @return <code>boolean</code> true if aircraft empty; false otherwise 
 	 */
 	public boolean flightEmpty() {
-		
+		List<Passenger> passengersFlight = getPassengers();
+		if(passengersFlight.isEmpty()){
+			return true;
+		}else{
+			return false;
+		}
 	}
 	
 	/**
@@ -129,7 +156,13 @@ public abstract class Aircraft {
 	 * @return <code>boolean</code> true if aircraft full; false otherwise 
 	 */
 	public boolean flightFull() {
-		
+		List<Passenger> passengersFlight = getPassengers();
+		int size = passengersFlight.size();
+		if(size == capacity){
+			return true;
+		}else{
+			return false;
+		}
 	}
 	
 	/**
@@ -161,7 +194,7 @@ public abstract class Aircraft {
 	 * @return <code>int</code> number of Business Class passengers 
 	 */
 	public int getNumBusiness() {
-		
+		return numBusiness;		
 	}
 	
 	
@@ -170,9 +203,9 @@ public abstract class Aircraft {
 	 * 
 	 * @return <code>int</code> number of Economy Class passengers 
 	 */
-	public int getNumEonomy() {
-		
-	}
+	public int getNumEconomy() {
+		return numEconomy;	
+		}
 
 	/**
 	 * Simple getter for number of confirmed First Class passengers
@@ -180,7 +213,7 @@ public abstract class Aircraft {
 	 * @return <code>int</code> number of First Class passengers 
 	 */
 	public int getNumFirst() {
-		
+		return numFirst;		
 	}
 
 	/**
@@ -189,7 +222,8 @@ public abstract class Aircraft {
 	 * @return <code>int</code> number of Confirmed passengers 
 	 */
 	public int getNumPassengers() {
-		
+		int numPassengers = numFirst + numBusiness + numPremium + numEconomy;
+		return numPassengers;		
 	}
 	
 	/**
@@ -198,7 +232,7 @@ public abstract class Aircraft {
 	 * @return <code>int</code> number of Premium Economy Class passengers
 	 */
 	public int getNumPremium() {
-		
+		return numPremium;		
 	}
 	
 	/**
@@ -208,7 +242,7 @@ public abstract class Aircraft {
 	 * @return <code>List<Passenger></code> object containing the passengers.  
 	 */
 	public List<Passenger> getPassengers() {
-		
+		return seats;		
 	}
 	
 	/**
