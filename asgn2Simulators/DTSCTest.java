@@ -1,3 +1,9 @@
+/**
+ * 
+ * This file is part of the AircraftSimulator Project, written as 
+ * part of the assessment for CAB302, semester 1, 2016. 
+ * 
+ */
 package asgn2Simulators;
 
 import java.awt.BorderLayout;
@@ -5,9 +11,6 @@ import java.awt.EventQueue;
 import java.awt.FlowLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.util.Calendar;
-import java.util.Date;
-import java.util.GregorianCalendar;
 import java.util.Random;
 
 import javax.swing.JButton;
@@ -20,63 +23,72 @@ import org.jfree.chart.ChartPanel;
 import org.jfree.chart.JFreeChart;
 import org.jfree.chart.axis.ValueAxis;
 import org.jfree.chart.plot.XYPlot;
-import org.jfree.data.time.Day;
 import org.jfree.data.time.DynamicTimeSeriesCollection;
 import org.jfree.data.time.Second;
-import org.jfree.data.time.TimeSeries;
-import org.jfree.data.time.TimeSeriesCollection;
 import org.jfree.data.xy.XYDataset;
+import org.jfree.ui.ApplicationFrame;
 import org.jfree.ui.RefineryUtilities;
 
+/** 
+ * Example code unchanged from the Stack Overflow 
+ * question reference given below
+ * @see http://stackoverflow.com/questions/5048852
+ * 
+ *  */
+public class DTSCTest extends ApplicationFrame {
 
-
-public class GUISimulator extends javax.swing.JFrame implements java.lang.Runnable
-{
+    /**
+	 * 
+	 */
 	private static final long serialVersionUID = 8645229832063987966L;
 	
-	
-    private static final String BUTTONTEXT = "BOOK";
-   
-    private static final float MINMAX = 400;
+	private static final String TITLE = "Dynamic Series";
+    private static final String START = "Start";
+    private static final String STOP = "Stop";
+    private static final float MINMAX = 100;
     private static final int COUNT = 2 * 60;
     private static final int FAST = 100;
     private static final int SLOW = FAST * 5;
     private static final Random random = new Random();
     private Timer timer;
-	private static final String TITLE = "Booking System";
 
-	public GUISimulator(java.lang.String title) throws java.awt.HeadlessException
-	{
-		super(title);
+    public DTSCTest(final String title) {
+        super(title);
         final DynamicTimeSeriesCollection dataset =
-            new DynamicTimeSeriesCollection(4, COUNT, new Second());
+            new DynamicTimeSeriesCollection(2, COUNT, new Second());
         dataset.setTimeBase(new Second(0, 0, 0, 1, 1, 2011));
-        dataset.addSeries(gaussianData(), 0, "First");
-        dataset.addSeries(gaussianData(), 1, "Business");
-        dataset.addSeries(gaussianData(), 2, "Primium");
-        dataset.addSeries(gaussianData(), 3, "Economy");
+        dataset.addSeries(gaussianData(), 0, "Human");
+        dataset.addSeries(gaussianData(), 1, "Alien");
         JFreeChart chart = createChart(dataset);
 
-        final JButton run = new JButton(BUTTONTEXT);
+        final JButton run = new JButton(STOP);
         run.addActionListener(new ActionListener() {
 
             @Override
             public void actionPerformed(ActionEvent e) {
                 String cmd = e.getActionCommand();
-                
+                if (STOP.equals(cmd)) {
+                    timer.stop();
+                    run.setText(START);
+                } else {
+                    timer.start();
+                    run.setText(STOP);
+                }
             }
         });
 
         final JComboBox<String> combo = new JComboBox<String>();
-        combo.addItem("First");
-        combo.addItem("Business");
-        combo.addItem("Primium");
-        combo.addItem("Economy");
+        combo.addItem("Fast");
+        combo.addItem("Slow");
         combo.addActionListener(new ActionListener() {
 
             @Override
             public void actionPerformed(ActionEvent e) {
-                
+                if ("Fast".equals(combo.getSelectedItem())) {
+                    timer.setDelay(FAST);
+                } else {
+                    timer.setDelay(SLOW);
+                }
             }
         });
 
@@ -98,9 +110,9 @@ public class GUISimulator extends javax.swing.JFrame implements java.lang.Runnab
                 dataset.appendData(newData);
             }
         });
-	}
-	
-	private float randomValue() {
+    }
+
+    private float randomValue() {
         return (float) (random.nextGaussian() * MINMAX / 3);
     }
 
@@ -114,35 +126,30 @@ public class GUISimulator extends javax.swing.JFrame implements java.lang.Runnab
 
     private JFreeChart createChart(final XYDataset dataset) {
         final JFreeChart result = ChartFactory.createTimeSeriesChart(
-            TITLE, "Week", "Passenger", dataset, true, true, false);
+            TITLE, "hh:mm:ss", "milliVolts", dataset, true, true, false);
         final XYPlot plot = result.getXYPlot();
         ValueAxis domain = plot.getDomainAxis();
-        domain.setRange(1, 7);
-        domain.setTickMarkOutsideLength(1);
-        
+        domain.setAutoRange(true);
         ValueAxis range = plot.getRangeAxis();
-        range.setRange(0, MINMAX);
+        range.setRange(-MINMAX, MINMAX);
         return result;
     }
-	
-	@Override
-	public void run() {
-		// TODO Auto-generated method stub
-		
-	}
-	public static void main(java.lang.String[] args)
-	{
-		EventQueue.invokeLater(new Runnable() {
+
+    public void start() {
+        timer.start();
+    }
+
+    public static void main(final String[] args) {
+        EventQueue.invokeLater(new Runnable() {
 
             @Override
             public void run() {
-            	GUISimulator demo = new GUISimulator(TITLE);
+                DTSCTest demo = new DTSCTest(TITLE);
                 demo.pack();
                 RefineryUtilities.centerFrameOnScreen(demo);
                 demo.setVisible(true);
-                //demo.start();
+                demo.start();
             }
         });
-	}
-
+    }
 }
