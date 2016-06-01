@@ -1,22 +1,7 @@
-/**
- * 
- * This file is part of the AircraftSimulator Project, written as 
- * part of the assessment for CAB302, semester 1, 2016. 
- * 
- */
 package asgn2Simulators;
-
-/**
- * 
- * @author hogan
- * @author Conrad Bell
- */
 
 public class Constants extends java.lang.Object
 {
-	/**
-	 *  List of all final or distinct variable, will use in GUI implements
-	 */
 	public static final int	CANCELLATION_PERIOD	= 7;
 	public static final double	DEFAULT_BUSINESS_PROB	= 0.14;
 	public static final double	DEFAULT_CANCELLATION_PROB	= 0.1;
