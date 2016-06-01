@@ -31,7 +31,19 @@ public class A380 extends Aircraft {
 	 * See {@link asgn2Aircraft.Aircraft#Aircraft(String, int, int, int, int, int)}
 	 */
 	public A380(String flightCode,int departureTime) throws AircraftException {
-		super(flightCode, departureTime, FIRST, BUSINESS, PREMIUM, ECONOMY); 
+		if(flightCode == null){
+		throw new AircraftException("Flight code is missing.");
+		}
+		if(departureTime <= 0){
+			throw new AircraftException("Aircraft has already departed.");
+		}
+		this.flightCode = flightCode;
+		this.departureTime = departureTime;
+		this.firstCapacity = FIRST;
+		this.businessCapacity = BUSINESS;
+		this.premiumCapacity = PREMIUM;
+		this.economyCapacity = ECONOMY;
+		this.capacity = firstCapacity + businessCapacity + premiumCapacity + economyCapacity;
 		this.type = "A380";
 	}
 
@@ -41,7 +53,37 @@ public class A380 extends Aircraft {
 	 * @see asgn2Aircraft.Aircraft#Aircraft(String, int, int, int, int, int) 
 	 */
 	public A380(String flightCode,int departureTime,int first, int business, int premium, int economy) throws AircraftException {
-		super(flightCode, departureTime, first, business, premium, economy);
+		if(flightCode == null){
+		throw new AircraftException("Flight code is missing.");
+		}
+		if(departureTime <= 0){
+			throw new AircraftException("Aircraft has already departed.");
+		}
+		if(first < 0){
+			throw new AircraftException("First class is not entered.");
+		}
+		if(business < 0){
+			throw new AircraftException("Business class is not entered.");			
+		}
+		if(premium < 0){
+			throw new AircraftException("Premium Economy class is not entered.");
+		}
+		if(economy < 0){
+			throw new AircraftException("Economy class is not entered.");
+		}
+		this.flightCode = flightCode;
+		this.departureTime = departureTime;
+		this.firstCapacity = first;
+		this.businessCapacity = business;
+		this.premiumCapacity = premium;
+		this.economyCapacity = economy;
+		this.capacity = firstCapacity + businessCapacity + premiumCapacity + economyCapacity;
 		this.type = "A380";
 	}
+	/**
+	 ** Simple no-argument constructor to support subclass access
+	 **/
+	 protected A380() {
+		 
+	 }
 }
