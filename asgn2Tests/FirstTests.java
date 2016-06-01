@@ -1,18 +1,50 @@
 package asgn2Tests;
 
-import asgn2Passengers.First;
-import asgn2Passengers.Passenger;
-import asgn2Passengers.PassengerException;
-
-/* The following tests are for the basic functionality of
- * First class
- * 
- * In the demonstration we'll uncomment them one at a time
- * and incrementally develop the program in response to
- * each test
- *
+/**
+ * @author Conrad Bell
  */
 
-public class FirstTests {
+import static org.junit.Assert.*;
 
+import org.junit.Test;
+
+import asgn2Passengers.First;
+
+public class FirstTest extends First{
+	
+	@Test
+	public void testFirst() {
+		try{
+			new First(12, 20);
+		}catch (Exception e){
+		fail(e.getMessage());
+		}
+	}
+
+	@Test
+	public void testCancelSeat() {
+		try{
+			new First(12, 17).cancelSeat(13);
+		}catch(Exception e){
+			fail(e.getMessage());
+		}
+	}
+
+	@Test
+	public void testConfirmSeat() {
+		try{
+			new First(12, 17).confirmSeat(13, 17);
+		}catch(Exception e){
+			fail(e.getMessage());
+		}
+	}
+
+	@Test
+	public void testFlyPassenger() {
+		try{
+			new First(12, 17).flyPassenger(17);
+		}catch(Exception e){
+			fail(e.getMessage());
+		}
+	}
 }

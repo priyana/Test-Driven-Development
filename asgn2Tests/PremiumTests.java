@@ -1,17 +1,24 @@
 package asgn2Tests;
 
-import asgn2Passengers.Premium;
-import asgn2Passengers.Passenger;
-import asgn2Passengers.PassengerException;
-
-/* The following tests are for the basic functionality of
- * Premium
- * In the demonstration we'll uncomment them one at a time
- * and incrementally develop the program in response to
- * each test
- *
+/**
+ * @author Conrad Bell
  */
 
-public class PremiumTests {
+import static org.junit.Assert.*;
+
+import org.junit.Test;
+
+import asgn2Passengers.Premium;
+
+public class PremiumTest extends Premium {
+
+	@Test
+	public void testPremiumIntInt() {
+		try{
+			new Premium(12, 20);
+		}catch (Exception e){
+		fail(e.getMessage());
+		}
+	}
 
 }
