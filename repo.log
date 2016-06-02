@@ -1,0 +1,168 @@
+* 2867185 : simulator update
+* 6e3c440 : update passenger code
+* 464bd08 : Update README.md
+* 7a3fdd8 : Update for simulatore
+* 4edfddc : Final code For passenger
+* 9271a6d : simulator coding
+* b412d59 : Finished all I can for aircraft class
+* 22946ee : Current changes to B747.java
+* cd59932 : Current changes to A380.java
+* 6adb244 : Current Changes to Aircraft.java fix
+* 26d7bb8 : Revert "Current Changes to Aircraft.java"
+* 9db5cf6 : Current Changes to Aircraft.java
+* cf98d7b : Revert "Current changes to Aircraft.java"
+* f9c8f1a : Current changes to Aircraft.java
+* 8b37d40 : class and test class structure
+* 4f48ace : aircraft package
+* e8fe6c1 : Add files via upload
+* 11aaffb : pasesenger package
+* 97296ee : Initial commitcommit 2867185d5c5c4d4e3b3fb456a630b714208dfb41
+Author: priyana <ppriyanka1708@gamil.com>
+Date:   Wed Jun 1 20:01:14 2016 +1000
+
+    simulator update
+    
+    simulators update
+
+commit 6e3c440ce0c901a233e1665aa58a022b613d91c9
+Author: priyana <ppriyanka1708@gamil.com>
+Date:   Mon May 30 20:57:37 2016 +1000
+
+    update passenger code
+    
+    update passenger
+
+commit 464bd081ba74216370966ffc5ec6b3ff9c451073
+Author: priyana <ppriyanka211@yahoo.com>
+Date:   Sun May 29 19:51:18 2016 +1000
+
+    Update README.md
+
+commit 7a3fdd8b9c9f847f21fe80e63e9dec280d3f8d33
+Author: priyana <ppriyanka1708@gamil.com>
+Date:   Sun May 29 19:46:57 2016 +1000
+
+    Update for simulatore
+    
+    Simulators Update
+
+commit 4edfddc2ed9981700eb43a9146bf8fab02ccc00b
+Author: priyana <ppriyanka1708@gamil.com>
+Date:   Sun May 29 19:05:20 2016 +1000
+
+    Final code For passenger
+    
+    passenger code
+
+commit 9271a6d9e60bfe7e0d9c61b4a3f869acd50a11e6
+Author: priyana <ppriyanka1708@gamil.com>
+Date:   Fri May 27 21:12:15 2016 +1000
+
+    simulator coding
+    
+    simulater  continue
+
+commit b412d59b67cbc02f78873f13a783c24d216bfb5e
+Author: Conrad Bell <cbell7240@gmail.com>
+Date:   Sun May 29 01:03:13 2016 +1000
+
+    Finished all I can for aircraft class
+    
+    I am unable to finish the methods upgradeBookings, seatsAvailable,
+    getBookings, flyPassengers, confirmBookings and cancelBookings. I am
+    sorry and hope you can finish them off. I will continue to try and
+    finish them but am not sure that I can.
+
+commit 22946ee546c314572692060babc4aa88e9730699
+Author: Conrad Bell <cbell7240@gmail.com>
+Date:   Sat May 28 20:36:40 2016 +1000
+
+    Current changes to B747.java
+    
+    This is the file used to distinguish the type of aircraft as a B747.
+
+commit cd599323b192b0d40e650c5ccb910111d45f0e1f
+Author: Conrad Bell <cbell7240@gmail.com>
+Date:   Sat May 28 20:35:07 2016 +1000
+
+    Current changes to A380.java
+    
+    This is the file used to distinguish the type of aircraft as an A380.
+
+commit 6adb244e5cba8eed2de53fdaecc9e3ec4643ffe2
+Author: Conrad Bell <cbell7240@gmail.com>
+Date:   Sat May 28 17:52:52 2016 +1000
+
+    Current Changes to Aircraft.java fix
+    
+    An almost finished version of aircraft.java
+
+commit 26d7bb8a0d6ef0faa9bdb4c2a68732471e7356ed
+Author: Conrad Bell <cbell7240@gmail.com>
+Date:   Sat May 28 17:51:48 2016 +1000
+
+    Revert "Current Changes to Aircraft.java"
+    
+    This reverts commit 9db5cf64ecb1990e83cdf2de2a44e8221b7db69d.
+
+commit 9db5cf64ecb1990e83cdf2de2a44e8221b7db69d
+Author: Conrad Bell <ignis1533@gmail.com>
+Date:   Sat May 28 17:50:22 2016 +1000
+
+    Current Changes to Aircraft.java
+    
+    An almost finished version of the aircraft java. Missing some current
+    code to do with bookings and passengers.
+    This is the same as the last commit but in an attempt to fix the commit
+    account.
+
+commit cf98d7b01fa1f57877df7c57748d9b02e78803b2
+Author: Conrad Bell <ignis1533@gmail.com>
+Date:   Sat May 28 17:41:26 2016 +1000
+
+    Revert "Current changes to Aircraft.java"
+    
+    This reverts commit f9c8f1ab4cdbec53f505e3a8af79871df93573b6.
+
+commit f9c8f1ab4cdbec53f505e3a8af79871df93573b6
+Author: Conrad Bell <ignis1533@gmail.com>
+Date:   Sat May 28 17:37:19 2016 +1000
+
+    Current changes to Aircraft.java
+    
+    An almost finished version of the aircraft.java file.
+    Missing some features to do with bookings and passengers for the moment.
+
+commit 8b37d403a9ec0f82a3c5339b0496562c5f78ad0a
+Author: priyana <ppriyanka1708@gamil.com>
+Date:   Thu May 26 16:24:56 2016 +1000
+
+    class and test class structure
+    
+    passengers package
+
+commit 4f48ace5ca66d779f0b1bc7dec250eaad58b15c4
+Author: Conrad <cbell7240@gmail.com>
+Date:   Fri May 20 21:36:22 2016 +1000
+
+    aircraft package
+
+commit e8fe6c19b74e1bab59203f18ef52cde7cbc87dda
+Author: priyana <ppriyanka211@yahoo.com>
+Date:   Fri May 20 12:48:01 2016 +1000
+
+    Add files via upload
+
+commit 11aaffba94aaceedfff2def37325c99745c8e5df
+Author: priyana <ppriyanka1708@gamil.com>
+Date:   Fri May 20 12:45:11 2016 +1000
+
+    pasesenger package
+    
+    all stucture class
+
+commit 97296eed5da2705920ffda27dbe69d62330463ee
+Author: priyana <ppriyanka211@yahoo.com>
+Date:   Mon May 16 10:29:50 2016 +1000
+
+    Initial commit

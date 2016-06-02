@@ -10,7 +10,7 @@ package asgn2Simulators;
  * Specialisation of the {@link asgn2Aircraft.AircraftException,asgn2Aircraft.Bookings,asgn2Passengers.Passenger,asgn2Passengers.PassengerException} class for the Flights. 
  * 
  * @author hogan
- * @author Conrad Bell
+ * @author priyanka patel
  */
 
 import asgn2Aircraft.AircraftException;
