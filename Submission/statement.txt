@@ -1,0 +1,18 @@
+Members:
+ 	Conrad Bell - n8587604
+ 	Priyanka Patel - n8998639
+
+Contributions:
+Aircraft Classes - Conrad Bell
+Passenger Classes - Priyanka Patel
+Aircraft Tests - Priyanka Patel
+Passenger Tests - Conrad Bell
+Simulator Classes - Conrad Bell & Priyanka Patel
+
+Agreement:
+I, Conrad Bell, agree that the above summary of contribution is correct.
+I, Priyanka Patel, agree that the above summary of contribution is correct.
+
+Statement:
+
+--  we are completing both assignment include GUItest.pdf file, we find lots of bugs when we creating this assignments like JFree chart, line chart etc.. but we resolve this bugs use of online and past example..
