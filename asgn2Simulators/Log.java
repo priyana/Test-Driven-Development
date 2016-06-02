@@ -10,7 +10,7 @@ package asgn2Simulators;
  * Specialisation of the {@link aasgn2Passengers.Passenger} class for the Log. 
  * 
  * @author hogan
- * @author priyanka patel
+ * @author Conrad Bell
  */
 
 import asgn2Aircraft.AircraftException;

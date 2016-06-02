@@ -9,7 +9,7 @@ package asgn2Simulators;
 /**
  * 
  * @author hogan
- * @author priyanka patel
+ * @author Conrad Bell
  */
 
 public class Constants extends java.lang.Object

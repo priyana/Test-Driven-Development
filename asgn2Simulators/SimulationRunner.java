@@ -10,7 +10,7 @@ package asgn2Simulators;
  * Specialisation of the {@link asgn2Aircraft.AircraftException,asgn2Passengers.PassengerException} class for the SimulationRunner. 
  * 
  * @author hogan
- * @author priyanka patel
+ * @author Conrad Bell
  */
 
 import asgn2Aircraft.AircraftException;
